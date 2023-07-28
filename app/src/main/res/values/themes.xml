@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.RAWG" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="33">false</item>
+        <item name="colorPrimaryDark">@color/layout_background</item>
+        <item name="colorAccent">@color/lotus</item>
+        <item name="colorSurface">@color/lotus</item>
+        <item name="android:navigationBarColor">@color/layout_background</item>
+    </style>
+
+    <style name="splashScreenTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/layout_background</item>
+        <item name="android:windowBackground">@drawable/loading_background</item>
+    </style>
+
+    <style name="MyRatingBar" parent="@android:style/Widget.Holo.Light.RatingBar">
+        <item name="android:progressTint">@color/yellow</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="TextViewWithShadow" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/lotus</item>
+        <item name="android:shadowColor">@color/lotus</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+
+    <style name="PointView">
+        <item name="android:layout_width">2dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:background">@color/yellow</item>
+    </style>
+</resources>

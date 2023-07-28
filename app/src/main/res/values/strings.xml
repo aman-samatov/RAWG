@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RAWG</string>
+    <string name="back_text">Press again to exit</string>
+    <string name="games">Games</string>
+    <string name="rawg">RAWG</string>
+    <string name="try_again">Try again</string>
+    <string name="rating">Rating:</string>
+    <string name="total">Total\n</string>
+    <string name="released">Released:\u0020</string>
+    <string name="genres">Genres:\n</string>
+    <string name="platforms">Platforms:\n</string>
+    <string name="screenshots">Screenshots:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

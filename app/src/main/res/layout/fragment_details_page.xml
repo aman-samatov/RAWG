@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layout_background"
+    android:fitsSystemWindows="true"
+    tools:context=".detailspage.ui.DetailsPageFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:background="@color/layout_background"
+            app:contentScrim="@color/layout_background"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed|snap"
+            app:toolbarId="@id/toolbar">
+
+            <ImageView
+                android:id="@+id/imageViewIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"
+                tools:src="@color/white" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="67dp"
+                app:layout_collapseMode="pin"
+                android:background="@color/toolbar_background"
+                app:navigationIcon="@drawable/ic_back"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:fontFamily="@font/american_captain"
+                    android:gravity="start"
+                    android:shadowColor="@color/black"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="12"
+                    android:textColor="@color/lotus"
+                    android:textSize="34sp"
+                    tools:text="Sega mega drive and genesis classic" />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                style="@style/PointView"
+                android:layout_marginTop="4dp"
+                app:layout_constraintBottom_toBottomOf="@id/textViewScoreTitle"
+                app:layout_constraintEnd_toStartOf="@id/textViewScoreTitle"
+                app:layout_constraintTop_toTopOf="@id/textViewScoreTitle" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewScoreTitle"
+                style="@style/TextViewWithShadow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="@string/rating"
+                android:textSize="28sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewScore"
+                style="@style/TextViewWithShadow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_regular"
+                android:gravity="center|top"
+                android:textSize="27sp"
+                app:layout_constraintStart_toEndOf="@id/ratingBar"
+                app:layout_constraintEnd_toEndOf="@id/ratingBar"
+                app:layout_constraintBottom_toBottomOf="@id/textViewScoreTitle"
+                tools:text="4.36" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/MyRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="10dp"
+                android:isIndicator="true"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:stepSize="0.01"
+                app:layout_constraintBottom_toBottomOf="@id/textViewScoreTitle"
+                app:layout_constraintStart_toStartOf="@id/textViewScoreTitle"
+                app:layout_constraintTop_toTopOf="@id/textViewScoreTitle"
+                tools:rating="4.36" />
+
+            <View
+                style="@style/PointView"
+                android:layout_marginTop="4dp"
+                app:layout_constraintBottom_toBottomOf="@id/textViewReleased"
+                app:layout_constraintEnd_toStartOf="@id/textViewReleased"
+                app:layout_constraintTop_toTopOf="@id/textViewReleased" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewReleased"
+                style="@style/TextViewWithShadow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand_regular"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:text="@string/released"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewScoreTitle" />
+
+            <View
+                style="@style/PointView"
+                app:layout_constraintBottom_toBottomOf="@id/textViewGenres"
+                app:layout_constraintEnd_toStartOf="@id/textViewGenres"
+                app:layout_constraintTop_toTopOf="@id/textViewGenres" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewGenres"
+                style="@style/TextViewWithShadow"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="@string/genres"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewReleased" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewGenres"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewGenres"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_genre_platform" />
+
+            <View
+                style="@style/PointView"
+                app:layout_constraintBottom_toBottomOf="@id/textViewPlatforms"
+                app:layout_constraintEnd_toStartOf="@id/textViewPlatforms"
+                app:layout_constraintTop_toTopOf="@id/textViewPlatforms" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewPlatforms"
+                style="@style/TextViewWithShadow"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="@string/platforms"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewGenres" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewPlatforms"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewPlatforms"
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                android:paddingHorizontal="8dp"
+                tools:spanCount="4"
+                tools:listitem="@layout/item_genre_platform" />
+
+            <View
+                style="@style/PointView"
+                app:layout_constraintBottom_toBottomOf="@id/textViewScreenshots"
+                app:layout_constraintEnd_toStartOf="@id/textViewScreenshots"
+                app:layout_constraintTop_toTopOf="@id/textViewScreenshots" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewScreenshots"
+                style="@style/TextViewWithShadow"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/quicksand_regular"
+                android:text="@string/screenshots"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewPlatforms" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewScreenshots"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginBottom="8dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewScreenshots"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_screenshot" />
+
+            <ImageView
+                android:id="@+id/imageViewAgeRatingIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/pieChartRatings"
+                app:layout_constraintTop_toTopOf="@id/pieChartRatings"
+                app:layout_constraintBottom_toBottomOf="@id/pieChartRatings"
+                tools:src="@drawable/esrb_teen" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChartRatings"
+                android:layout_width="0dp"
+                android:layout_height="272dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintWidth_percent="0.75"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewScreenshots"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

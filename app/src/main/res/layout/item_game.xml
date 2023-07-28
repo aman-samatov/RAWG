@@ -1,0 +1,104 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/item_game_width"
+    android:layout_height="@dimen/item_game_height"
+    android:layout_margin="4dp"
+    android:background="@drawable/item_game_background"
+    android:paddingHorizontal="4dp"
+    android:paddingVertical="4dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewIcon"
+        android:layout_width="@dimen/image_width"
+        android:layout_height="@dimen/image_height"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@color/lotus"
+        app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewMetaScore"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        style="@style/TextViewWithShadow"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/text_view_background"
+        android:fontFamily="@font/quicksand_bold"
+        android:gravity="center"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="2dp"
+        android:shadowColor="@color/fresh_lime"
+        android:shadowRadius="10"
+        android:textColor="@color/yellow"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/imageViewIcon"
+        app:layout_constraintTop_toBottomOf="@id/imageViewIcon"
+        tools:text="92" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/TextViewWithShadow"
+        android:layout_marginStart="12dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/quicksand_regular"
+        android:gravity="center|start"
+        android:maxLines="2"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:singleLine="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/textViewMetaScore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textViewMetaScore"
+        app:layout_constraintTop_toTopOf="@id/textViewMetaScore"
+        tools:text="Sonic All-Stars Racing Transformed" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/MyRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:isIndicator="true"
+        android:scaleX="0.6"
+        android:scaleY="0.6"
+        android:stepSize="0.01"
+        app:layout_constraintBottom_toBottomOf="@id/textViewScore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textViewScore"
+        tools:rating="4.36" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewScore"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/TextViewWithShadow"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/quicksand"
+        android:gravity="center"
+        android:shadowColor="@color/emerald_green"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="@id/textViewMetaScore"
+        app:layout_constraintStart_toStartOf="@id/textViewMetaScore"
+        app:layout_constraintTop_toBottomOf="@id/textViewName"
+        tools:text="4.36" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPlatforms"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/imageViewIcon"
+        app:layout_constraintTop_toTopOf="@id/imageViewIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:spanCount="2"
+        tools:itemCount="8"
+        tools:listitem="@layout/item_platform"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
